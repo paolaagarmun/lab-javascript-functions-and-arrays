@@ -1,19 +1,38 @@
 // Iteration #1: Find the maximum
-function maxOfTwoNumbers() {}
+function maxOfTwoNumbers(n1,n2) {
+  return (n1>n2 ? n1 : n2)
+}
 
 
 
 // Iteration #2: Find longest word
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 
-function findLongestWord() {}
+function findLongestWord(words) {
+  if (words.length===0) {
+    return null;
+  }
+  let largestWord = ""
+    for (i=0;i<words.length;i++) {
+      if (words[i].length > largestWord.length) {
+        largestWord = words[i]
+      } else
+        largestWord
+    }
+    return largestWord 
+  }
 
 
 
 // Iteration #3: Calculate the sum
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
-function sumNumbers() {}
+function sumNumbers(arr) {
+  const reducer = (sum, val) => sum + val;
+  const initialValue = 0;
+  return arr.reduce(reducer, initialValue);
+
+}
 
 
 
@@ -26,13 +45,36 @@ function sum() {}
 // Level 1: Array of numbers
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 
-function averageNumbers() {}
+function averageNumbers(arr) {
+  if (arr.length===0) {
+    return null;
+  }
+  let sum = sumNumbers(arr);
+  return sum/arr.length;
+}
 
 
 // Level 2: Array of strings
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 
-function averageWordLength() { }
+//need to count the characters of all the words in the array
+//divide it by the length of the array
+
+function averageWordLength(promedio) { 
+  if (promedio.length === 0){
+    return null;
+  }
+  let sum = 0
+  if (promedio.length === 1) {
+    sum = promedio.toString().length
+    return sum/promedio.length
+  }
+  let charArr = 0
+  for (let i=0;i<promedio.length;i++) {
+    charArr += promedio[i].length
+  } 
+  return charArr/promedio.length
+}
 
 // Bonus - Iteration #4.1
 function avg() {}
@@ -52,7 +94,18 @@ const wordsUnique = [
   'bring'
 ];
 
-function uniquifyArray() {}
+function uniquifyArray(arr) {
+  if (arr.length === 0) {
+    return null
+  }
+  let list = []
+  for (let item in arr) {
+    if(!list.includes(arr)) {
+      list.push(item)
+    }
+  }
+  return list
+}
 
 
 
