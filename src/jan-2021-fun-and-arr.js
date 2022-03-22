@@ -81,7 +81,7 @@ function uniquifyArray(arrOfWordsToUniquify) {
 function uniquifyArray2(arrOfWordsToUniquify) {
     let newArr = [];
     for (let i = 0; i < arrOfWordsToUniquify.length; i++) {
-        if (arrOfWordsToUniquify.indexOf(arrOfWordsToUniquify[i]) === -1) {
+        if (newArr.indexOf(arrOfWordsToUniquify[i]) === -1) {
             newArr.push(arrOfWordsToUniquify[i]);
         }
     }
